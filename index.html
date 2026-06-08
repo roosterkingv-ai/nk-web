@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Neko-Void | Void Linux Respin</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://huggingface.co/arepaconcafe/neko-base/resolve/main/logo.ico"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body class="lang-en">
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img
+                class="lightbox-content"
+                id="lightbox-img"
+                alt="Lightbox Image"
+            />
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="#inicio" class="navbar-brand">
+                    <img
+                        src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/logo.png"
+                        alt="Logo Neko-Void"
+                        class="navbar-logo-img"
+                    />
+                    <span>NEKO_VOID</span>
+                </a>
+                <div id="version-tag" class="version-badge">
+                    <span class="en">Loading version...</span
+                    ><span class="es">Cargando versión...</span
+                    ><span class="ja">バージョンを読み込み中...</span>
+                </div>
+            </div>
+            
+            <!-- Mobile menu toggle button - RIGHT SIDE -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a
+                        href="#inicio"
+                        class="nav-link active"
+                        data-target="inicio"
+                        onclick="closeMobileMenu()"
+                    >
+                        <span class="en">Home</span
+                        ><span class="es">Inicio</span
+                        ><span class="ja">ホーム</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#detalles" class="nav-link" data-target="detalles" onclick="closeMobileMenu()">
+                        <span class="en">Details</span
+                        ><span class="es">Detalles</span
+                        ><span class="ja">詳細</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#galeria" class="nav-link" data-target="galeria" onclick="closeMobileMenu()">
+                        <span class="en">Gallery</span
+                        ><span class="es">Galería</span
+                        ><span class="ja">ギャラリー</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        href="#descargas"
+                        class="nav-link"
+                        data-target="descargas"
+                        onclick="closeMobileMenu()"
+                    >
+                        <span class="en">Download</span
+                        ><span class="es">Descargas</span
+                        ><span class="ja">ダウンロード</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        href="#donaciones"
+                        class="nav-link"
+                        data-target="donaciones"
+                        onclick="closeMobileMenu()"
+                    >
+                        <span class="en">Donate</span
+                        ><span class="es">Donar</span
+                        ><span class="ja">寄付</span>
+                    </a>
+                </li>
+                <!-- Language switcher INSIDE mobile menu -->
+                <li class="nav-item lang-switch-mobile">
+                    <div class="lang-switch">
+                        <button
+                            id="btn-en"
+                            onclick="setLang('en'); closeMobileMenu()"
+                            class="lang-btn active"
+                        >
+                            EN
+                        </button>
+                        <button
+                            id="btn-es"
+                            onclick="setLang('es'); closeMobileMenu()"
+                            class="lang-btn"
+                        >
+                            ES
+                        </button>
+                        <button
+                            id="btn-ja"
+                            onclick="setLang('ja'); closeMobileMenu()"
+                            class="lang-btn"
+                        >
+                            JA
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="inicio" class="hero app-section active">
+                <h1>NEKO VOID</h1>
+                <span>&lt;respin_void_linux /&gt;</span>
+                <div class="project-links">
+                    <a
+                        href="https://sourceforge.net/projects/neko-void/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                        style="text-decoration: none"
+                        >SourceForge</a
+                    >
+                    <a
+                        href="https://codeberg.org/javiercplus/Neko-Void"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                        style="text-decoration: none"
+                        >Codeberg</a
+                    >
+                    <a
+                        href="https://distrowatch.com/table.php?distribution=nekovoid"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                        style="text-decoration: none"
+                        >DistroWatch</a
+                    >
+                    <a
+                        href="https://codeberg.org/javiercplus/Kasha-Installer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                        style="text-decoration: none"
+                        >Kasha Installer</a
+                    >
+                </div>
+
+                <footer
+                    style="
+                        margin-top: auto;
+                        padding: 20px;
+                        text-align: center;
+                        color: var(--comment);
+                        font-size: 0.85rem;
+                        width: 100%;
+                        border-top: 1px solid rgba(255, 255, 255, 0.05);
+                    "
+                >
+                    Neko-Void Project &copy; 2026 | Powered by Void Linux
+                </footer>
+            </section>
+
+            <section id="detalles" class="app-section">
+                <div class="container">
+                    <h2
+                        style="
+                            color: var(--cyan);
+                            margin-bottom: 40px;
+                            text-align: center;
+                            font-size: 2.5rem;
+                        "
+                    >
+                        <span class="en">Specifications</span
+                        ><span class="es">Especificaciones</span
+                        ><span class="ja">仕様</span>
+                    </h2>
+                    
+                    <!-- Features Grid -->
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3 style="color: var(--pink); margin-bottom: 15px">
+                                <span class="en">Core Architecture</span
+                                ><span class="es">Arquitectura Base</span
+                                ><span class="ja">コアアーキテクチャ</span>
+                            </h3>
+                            <p class="en">
+                                Built on <strong>Void Linux</strong> with 
+                                <strong>runit</strong> for lightning-fast boot times.
+                                Features the <strong>MATE</strong> desktop environment
+                                with essential tools pre-installed.
+                            </p>
+                            <p class="es">
+                                Basado en <strong>Void Linux</strong> con 
+                                <strong>runit</strong> para tiempos de arranque ultrarrápidos.
+                                Incluye el entorno de escritorio <strong>MATE</strong>
+                                con herramientas esenciales preinstaladas.
+                            </p>
+                            <p class="ja">
+                                <strong>Void Linux</strong>をベースに、<strong>runit</strong>で
+                                超高速ブートを実現。<strong>MATE</strong>デスクトップ環境と
+                                必須ツールを事前インストール済み。
+                            </p>
+                            <ul class="feature-list">
+                                <li><strong>Flatpak</strong> - Universal packages</li>
+                                <li><strong>Tinyfetch</strong> - System info</li>
+                                <li><strong>btop</strong> - Resource monitor</li>
+                                <li><strong>Octoxbps</strong> - GUI package manager</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3 style="color: var(--pink); margin-bottom: 15px">
+                                <span class="en">Gaming Ready</span
+                                ><span class="es">Listo para Gaming</span
+                                ><span class="ja">ゲーミング対応</span>
+                            </h3>
+                            <p class="en">
+                                Optimized for maximum performance with full
+                                <strong>Vulkan</strong> support and preconfigured
+                                non-free Intel/AMD drivers for seamless gaming
+                                from day one.
+                            </p>
+                            <p class="es">
+                                Optimizado para máximo rendimiento con soporte
+                                completo <strong>Vulkan</strong> y drivers
+                                non-free de Intel/AMD preconfigurados para
+                                gaming sin problemas desde el primer día.
+                            </p>
+                            <p class="ja">
+                                完全な<strong>Vulkan</strong>サポートと、事前設定された
+                                Intel/AMD 用 non-free ドライバーで、初日からシームレスな
+                                ゲーミング体験を提供。
+                            </p>
+                            <ul class="feature-list">
+                                <li>Full Vulkan API support</li>
+                                <li>Pre-configured GPU drivers</li>
+                                <li>Optimized performance settings</li>
+                                <li>Ready for Steam & Lutris</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3 style="color: var(--pink); margin-bottom: 15px">
+                                <span class="en">Kasha Installer</span
+                                ><span class="es">Instalador Kasha</span
+                                ><span class="ja">Kasha インストーラー</span>
+                            </h3>
+                            <p class="en">
+                                Custom installer that simplifies Void Linux setup.
+                                Includes a powerful <strong>post-install assistant</strong>
+                                for one-click configuration of specialized workflows.
+                            </p>
+                            <p class="es">
+                                Instalador personalizado que simplifica la configuración
+                                de Void Linux. Incluye un potente
+                                <strong>asistente post-instalación</strong> para
+                                configuración con un clic de flujos especializados.
+                            </p>
+                            <p class="ja">
+                                Void Linux のセットアップを簡素化するカスタムインストーラー。
+                                専門的なワークフローのワンクリック設定に対応した強力な
+                                <strong>ポストインストールアシスタント</strong>を搭載。
+                            </p>
+                            <ul class="feature-list">
+                                <li>Easy user & network setup</li>
+                                <li>Automatic partitioning</li>
+                                <li>One-click app categories</li>
+                                <li>Video, Music, Design, Gaming & more</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Credits Section -->
+                    <div class="credits-section">
+                        <h3 style="color: var(--cyan); margin-bottom: 25px; text-align: center;">
+                            <span class="en">Credits</span
+                            ><span class="es">Créditos</span
+                            ><span class="ja">クレジット</span>
+                        </h3>
+                        <div class="credits-grid">
+                            <div class="credit-item">
+                                <h4 style="color: var(--cyan)">
+                                    <span class="en">Developer</span
+                                    ><span class="es">Desarrollador</span
+                                    ><span class="ja">開発者</span>
+                                </h4>
+                                <p>Javierc</p>
+                            </div>
+                            <div class="credit-item">
+                                <h4 style="color: var(--cyan)">
+                                    <span class="en">Designer</span
+                                    ><span class="es">Diseñador</span
+                                    ><span class="ja">デザイナー</span>
+                                </h4>
+                                <p>Hikawa</p>
+                            </div>
+                            <div class="credit-item">
+                                <h4 style="color: var(--cyan)">Sponsor</h4>
+                                <p>S. A.</p>
+                            </div>
+                            <div class="credit-item">
+                                <h4 style="color: var(--cyan)">
+                                    <span class="en">Artists</span
+                                    ><span class="es">Artistas</span
+                                    ><span class="ja">アーティスト</span>
+                                </h4>
+                                <p>Moony&lt;3 &amp; Era_dark_knight</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="about-section">
+                        <div class="about-block">
+                            <h4 style="color: var(--pink); margin-bottom: 15px">
+                                <span class="en">Why it was created</span
+                                ><span class="es">Por qué se creó</span
+                                ><span class="ja">作成理由</span>
+                            </h4>
+                            <p class="en">
+                                The project originally started as a personal hobby.
+                                Over time, it evolved into a structured project aimed
+                                at offering an easy-to-install and user-friendly
+                                Void Linux version for the end user.
+                            </p>
+                            <p class="es">
+                                El proyecto se originó inicialmente como un hobby personal.
+                                Con el tiempo, evolucionó hasta convertirse en un proyecto
+                                estructurado con el objetivo de ofrecer una versión de
+                                Void Linux fácil de instalar y utilizar para el usuario final.
+                            </p>
+                            <p class="ja">
+                                このプロジェクトは元々個人的な趣味として始まりました。
+                                時を経て、エンドユーザー向けに簡単にインストールできて
+                                使いやすい Void Linux バージョンを提供することを目的とした
+                                構造化されたプロジェクトへと進化しました。
+                            </p>
+                        </div>
+                        <div class="about-block">
+                            <h4 style="color: var(--pink); margin-bottom: 15px">
+                                <span class="en">Target Audience</span
+                                ><span class="es">Público dirigido</span
+                                ><span class="ja">対象ユーザー</span>
+                            </h4>
+                            <p class="en">
+                                This distribution is aimed at users who want a
+                                lightweight and robust operating system, easily
+                                customizable for their specific workflow without
+                                the usual complications of a manual setup from scratch.
+                            </p>
+                            <p class="es">
+                                Esta distribución está dirigida a usuarios que desean
+                                un sistema operativo ligero y robusto, fácilmente
+                                adaptable a su flujo de trabajo específico sin las
+                                complicaciones habituales de una configuración manual
+                                desde cero.
+                            </p>
+                            <p class="ja">
+                                このディストリビューションは、軽量で堅牢なオペレーティングシステムを求め、
+                                一から手動でセットアップする際の一般的な複雑さなしに、
+                                特定のワークフローに簡単にカスタマイズしたいユーザーを対象としています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="galeria" class="app-section">
+                <div class="container">
+                    <h2
+                        style="
+                            color: var(--pink);
+                            text-align: center;
+                            margin-bottom: 40px;
+                        "
+                    >
+                        <span class="en">Gallery</span
+                        ><span class="es">Capturas</span
+                        ><span class="ja">ギャラリー</span>
+                    </h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img
+                                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/1.png"
+                                alt="Desktop View"
+                            />
+                        </div>
+                        <div class="gallery-item">
+                            <img
+                                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/2.png"
+                                alt="Terminal View"
+                            />
+                        </div>
+                        <div class="gallery-item">
+                            <img
+                                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/3.png"
+                                alt="Menu View"
+                            />
+                        </div>
+                        <div class="gallery-item">
+                            <img
+                                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/4.png"
+                                alt="Gaming View"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="descargas" class="app-section">
+                <div class="container">
+                    <h2 style="color: var(--cyan); margin-bottom: 40px; text-align: center; font-size: 2.5rem;">
+                        <span class="en">Editions</span
+                        ><span class="es">Ediciones</span
+                        ><span class="ja">エディション</span>
+                    </h2>
+                    <p style="color: var(--comment); margin-bottom: 50px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        <span class="en"
+                            >All Neko-Void editions with different desktop environments. If a button is gray, it means it is currently in development.</span
+                        >
+                        <span class="es"
+                            >Todas las ediciones de Neko-Void con diferentes entornos de escritorio. Si un botón está en gris, significa que actualmente está en desarrollo.</span
+                        >
+                        <span class="ja"
+                            >さまざまなデスクトップ環境を備えた Neko-Void の全エディション。ボタンが灰色の場合は、現在開発中であることを意味します。</span
+                        >
+                    </p>
+                    
+                    <div class="editions-list">
+                        <!-- Main Edition - Xorg -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>MATE - Xorg</h3>
+                                <span class="edition-badge-main">Main Edition</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="link-xorg"
+                                    class="btn-edition btn-primary"
+                                    style="cursor: pointer; font-family: inherit;"
+                                >
+                                    <span class="en">Download</span
+                                    ><span class="es">Descargar</span
+                                    ><span class="ja">ダウンロード</span>
+                                </button>
+                                <span
+                                    id="hash-xorg"
+                                    class="hash-text-inline"
+                                    title="Click to copy"
+                                    style="cursor: pointer;"
+                                    >SHA256: Loading...</span
+                                >
+                            </div>
+                        </div>
+                        
+                        <!-- Main Edition - XLibre -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>MATE - XLibre</h3>
+                                <span class="edition-badge-main">Main Edition</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="link-xlibre"
+                                    class="btn-edition btn-outline"
+                                    style="cursor: pointer; font-family: inherit;"
+                                >
+                                    <span class="en">Download</span
+                                    ><span class="es">Descargar</span
+                                    ><span class="ja">ダウンロード</span>
+                                </button>
+                                <span
+                                    id="hash-xlibre"
+                                    class="hash-text-inline"
+                                    title="Click to copy"
+                                    style="cursor: pointer;"
+                                    >SHA256: Loading...</span
+                                >
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - XFCE -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>XFCE</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-xfce"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - KDE -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>KDE</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-kde"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - SWAY & I3 -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>SWAY &amp; I3</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-sway-i3"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - HYPRLAND -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>HYPRLAND</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-hyprland"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - LXQT -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>LXQT</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-lxqt"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - LABWC & OPENBOX -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>LABWC &amp; OPENBOX</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-labwc-openbox"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - NIRI -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>NIRI</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-niri"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Flavor - ICEWM & JWM -->
+                        <div class="edition-item">
+                            <div class="edition-info">
+                                <h3>ICEWM &amp; JWM</h3>
+                                <span class="edition-badge-flavor">Flavor</span>
+                            </div>
+                            <div class="edition-actions">
+                                <button
+                                    id="flavor-icewm-jwm"
+                                    class="btn-edition btn-disabled"
+                                    disabled
+                                    style="font-family: inherit;"
+                                >
+                                    <span class="en">Coming Soon</span
+                                    ><span class="es">En desarrollo</span
+                                    ><span class="ja">開発中</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="donaciones" class="app-section">
+                <div class="container" style="text-align: center">
+                    <h2
+                        style="
+                            color: var(--pink);
+                            margin-bottom: 30px;
+                            text-align: center;
+                        "
+                    >
+                        <span class="en">Support the Project</span
+                        ><span class="es">Apoya el Proyecto</span>
+                    </h2>
+                    <p
+                        style="
+                            margin-bottom: 30px;
+                            color: var(--foreground);
+                            font-size: 1.1rem;
+                        "
+                    >
+                        <span class="en"
+                            >If you enjoy Neko-Void and want to help keep the
+                            servers running, consider buying us a coffee!</span
+                        >
+                        <span class="es"
+                            >Si disfrutas de Neko-Void y quieres ayudar a
+                            mantener los servidores, ¡considera invitarnos un
+                            café!</span
+                        >
+                    </p>
+                    <div
+                        style="
+                            display: flex;
+                            gap: 20px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <a
+                            href="https://linktr.ee/javiercplusx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-main"
+                            style="
+                                background: #ffdd00;
+                                color: black;
+                                border: 2px solid #ffdd00;
+                                text-decoration: none;
+                                transition: box-shadow 0.3s ease;
+                            "
+                            >🥤 Buy Me a Coffee</a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./js/app.js" defer></script>
+        <!-- Default Statcounter code for Neko Void https://neko-void.sourceforge.io/ -->
+        <script type="text/javascript">
+        var sc_project=13243377; 
+        var sc_invisible=0; 
+        var sc_security="76f1edea"; 
+        var scJsHost = "https://";
+        document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+        <noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+        Statcounter" href="https://statcounter.com/ " target="_blank"><img
+        class="statcounter" src="https://c.statcounter.com/13243377/0/76f1edea/0/ "
+        alt="Web Analytics Made Easy - Statcounter"
+        referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+        <!-- End of Statcounter Code -->
+    </body>
+</html>
