@@ -1,4 +1,4 @@
-# 🌐 Neko Void Web
+# Neko Void Web
 
 The official, brutalist, console-themed landing page and portal for **Neko Void**.
 
@@ -6,7 +6,7 @@ Built with a terminal aesthetic in mind, optimized for performance, and structur
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -46,7 +46,7 @@ npm run preview
 
 ---
 
-## 📂 Project Architecture
+##  Project Architecture
 
 The project has been fully refactored from a monolithic codebase into a highly modular, clean design:
 
@@ -74,14 +74,6 @@ For more details, check out the specialized guides:
 
 ---
 
-## 🛠️ Main Features
-
-- **Brutalist Terminal Aesthetic:** Consistent retro-cyber design language.
-- **Dynamic Localization:** Detects the user's timezone to serve English, Spanish, or Japanese instantly, with a manual dropdown selector.
-- **Typewriter FX:** Custom simulated terminal writer effect with cursor blink control.
-- **Modular Assets:** Built using ES Modules and bundled using Vite for efficient asset delivery.
-
----
 
 ## 🤝 Contributing
 
