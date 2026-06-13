@@ -1,5 +1,5 @@
-const DOWNLOADS_XML_URL = 'https://github.com/javiercplus/nk-web/raw/refs/heads/main/data/downloads.xml';
-const FLAVORS_XML_URL = 'https://github.com/javiercplus/nk-web/raw/refs/heads/main/data/flavors.xml';
+const DOWNLOADS_XML_URL = 'https://javiercplus.github.io/nk-web/data/downloads.xml';
+const FLAVORS_XML_URL = 'https://javiercplus.github.io/nk-web/data/flavors.xml';
 
 export async function fetchDownloadsData() {
     try {
