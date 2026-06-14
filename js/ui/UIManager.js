@@ -96,5 +96,34 @@ export const UIManager = {
 
     exposeGlobals() {
         window.setLang = this.setLanguage.bind(this);
+        window.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+        window.closeMobileMenu = this.closeMobileMenu.bind(this);
+    },
+
+    toggleMobileMenu() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Update aria-expanded attribute
+            const isExpanded = navLinks.classList.contains('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded.toString());
+        }
+    },
+
+    closeMobileMenu() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            
+            // Update aria-expanded attribute
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
     }
 };
